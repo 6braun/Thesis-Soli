@@ -15,7 +15,6 @@ contract AdvertContract {
  
   constructor() {
   owner = payable(msg.sender);
-  message = "Hello World!";
   }
 
   receive() external payable {
@@ -23,10 +22,9 @@ contract AdvertContract {
   }
 
   function receiveEther() payable public {
-    
   }
 
-  function receiveNewAd(uint _id, uint _wei) payable public{
+  function augmentAds(uint _id, uint _wei) payable public{
     ads[_id].funds += _wei;
   }
 
@@ -34,12 +32,17 @@ contract AdvertContract {
     return ads[_id].funds;
   }
 
-  function return1() private returns(uint){
-    
+  function getCounter(uint _id) public view returns(uint){
+    return ads[_id].counter;
   }
-  function return2() private returns(uint){
 
+
+  function showAd(uint _id) public {
+    ads[_id].counter++;
+    ads[_id].funds -= 20000;
   }
+
+
 
   function getBalance() public view returns(uint){
     return address(this).balance;
