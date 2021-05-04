@@ -1,7 +1,7 @@
 const Migrations = artifacts.require("Migrations");
-const HelloWorld = artifacts.require("HelloWorld");
+const Adverts = artifacts.require("AdvertContract");
 
 
 module.exports = function (deployer) {
-  deployer.deploy(HelloWorld);
+  deployer.deploy(Adverts);
 };
