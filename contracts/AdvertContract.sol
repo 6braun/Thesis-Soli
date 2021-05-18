@@ -2,7 +2,6 @@
 pragma solidity ^0.8.3;
 
 contract AdvertContract {
-  string message;
   address payable owner;
 
   struct Ad {
